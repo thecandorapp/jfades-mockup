@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JFADES STUDIOS — London's Premier Men's Grooming Studio | Ilford</title>
+<meta name="description" content="JFADES Studios — premium men's barbering, luxury treatments, and natural braiding in Ilford, London. Head Barber José. 4.9★ across 665 reviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0a0a0a;
+    background: #0a0a0a;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .display { font-family: 'Playfair Display', Georgia, serif; }
+  button { font-family: inherit; cursor: pointer; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Top bar */
+  .topbar {
+    background: #0a0a0a;
+    color: #888;
+    font-size: 11px;
+    text-align: center;
+    padding: 10px 16px;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .topbar .gold { color: #c9a961; }
+
+  /* Header */
+  .header {
+    background: #0a0a0a;
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1f1f1f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left { display: flex; gap: 32px; font-size: 11px; letter-spacing: 0.2em; color: #d4d4d4; }
+  .nav-left span { cursor: pointer; transition: color 0.2s; }
+  .nav-left span:hover { color: #c9a961; }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: #f5f1e8;
+  }
+  .logo .accent { color: #c9a961; }
+  .book-btn {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: none;
+    padding: 12px 22px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .book-btn:hover { background: #d4b876; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 640px;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    padding: 80px 80px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/biz_photo/d23bad518a6d44e89a2cc098ec4098-jfades-studios-biz-photo-dadd11ec63eb440ca9bc7ce07be327-booksy.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0a0a0a 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.4) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 620px; color: #f5f1e8; }
+  .gold-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #c9a961;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .gold-eyebrow::before, .gold-eyebrow::after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #c9a961;
+  }
+  .gold-eyebrow::after { display: none; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em { font-style: italic; color: #c9a961; }
+  .hero .lead {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #b8b8b8;
+    margin-bottom: 40px;
+    max-width: 520px;
+    font-weight: 300;
+  }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    padding: 16px 32px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    border: none;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .btn-gold { background: #c9a961; color: #0a0a0a; }
+  .btn-gold:hover { background: #d4b876; }
+  .btn-outline-light { background: transparent; color: #f5f1e8; border: 1px solid #f5f1e8; }
+  .btn-outline-light:hover { background: #f5f1e8; color: #0a0a0a; }
+
+  /* Trust bar */
+  .trust-bar {
+    background: #0f0f0f;
+    border-top: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .trust-item {
+    padding: 28px 24px;
+    text-align: center;
+    border-right: 1px solid #1f1f1f;
+    color: #d4d4d4;
+  }
+  .trust-item:last-child { border-right: none; }
+  .trust-item i { font-size: 22px; color: #c9a961; }
+  .trust-title { font-size: 13px; font-weight: 500; margin-top: 10px; color: #f5f1e8; }
+  .trust-sub { font-size: 11px; color: #888; margin-top: 4px; letter-spacing: 0.05em; }
+
+  /* Section base */
+  section { padding: 100px 48px; }
+  .section-head { text-align: center; margin-bottom: 60px; }
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 500;
+    color: #f5f1e8;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .section-head h2 em { font-style: italic; color: #c9a961; }
+  .section-head p { font-size: 15px; color: #888; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+  .gold-line {
+    width: 50px;
+    height: 1px;
+    background: #c9a961;
+    margin: 0 auto 24px;
+  }
+
+  /* Services */
+  .services { background: #0a0a0a; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #1f1f1f;
+  }
+  .service {
+    padding: 36px 40px;
+    border-right: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .service:hover { background: #0f0f0f; }
+  .service:nth-child(2n) { border-right: none; }
+  .service:nth-last-child(-n+2) { border-bottom: none; }
+  .service-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #f5f1e8;
+    font-weight: 500;
+  }
+  .service-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #c9a961;
+    font-weight: 500;
+  }
+  .service-meta {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  .service-desc {
+    font-size: 14px;
+    color: #b8b8b8;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .service-tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #c9a961;
+    border: 1px solid #c9a961;
+    padding: 4px 10px;
+  }
+
+  /* Founder section */
+  .founder {
+    background: #0f0f0f;
+    border-top: 1px solid #1f1f1f;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .founder-img {
+    aspect-ratio: 4/5;
+    background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/eaa47737de094719bd5b2fe37cbc5921.jpeg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #1f1f1f;
+    position: relative;
+  }
+  .founder-img::after {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px;
+    width: 100%; height: 100%;
+    border: 1px solid #c9a961;
+    z-index: -1;
+  }
+  .founder h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #f5f1e8;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .founder h2 em { font-style: italic; color: #c9a961; }
+  .founder p { font-size: 15px; line-height: 1.8; color: #b8b8b8; margin-bottom: 18px; font-weight: 300; }
+  .founder-sig {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #c9a961;
+    margin: 28px 0;
+  }
+
+  /* Reviews */
+  .reviews { background: #0a0a0a; }
+  .reviews-stats {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .stars-row {
+    color: #c9a961;
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+  .stats-text { color: #b8b8b8; font-size: 14px; }
+  .stats-text strong { color: #f5f1e8; font-weight: 500; }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .review {
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    padding: 32px;
+    transition: border-color 0.2s;
+  }
+  .review:hover { border-color: #c9a961; }
+  .review-stars { color: #c9a961; font-size: 13px; margin-bottom: 16px; letter-spacing: 2px; }
+  .review blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #d4d4d4;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .review-name { font-size: 13px; color: #f5f1e8; font-weight: 500; }
+  .review-meta { font-size: 11px; color: #888; letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* Gallery */
+  .gallery { background: #0f0f0f; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .gallery-grid > div {
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border: 1px solid #1f1f1f;
+  }
+  .gallery-grid > div:hover { opacity: 0.85; }
+
+  /* CTA section */
+  .cta {
+    background: #0a0a0a;
+    border-top: 1px solid #1f1f1f;
+    text-align: center;
+    padding: 100px 48px;
+  }
+  .cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #f5f1e8;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .cta h2 em { font-style: italic; color: #c9a961; }
+  .cta p {
+    color: #888;
+    font-size: 15px;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .cta .btn-row { justify-content: center; }
+
+  /* Visit / Contact */
+  .visit {
+    background: #0f0f0f;
+    border-top: 1px solid #1f1f1f;
+    padding: 90px 48px;
+  }
+  .visit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .visit-card {
+    text-align: center;
+    padding: 40px 28px;
+    border: 1px solid #1f1f1f;
+  }
+  .visit-card i {
+    font-size: 28px;
+    color: #c9a961;
+    margin-bottom: 18px;
+  }
+  .visit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #f5f1e8;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .visit-card p {
+    color: #b8b8b8;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* Footer */
+  footer {
+    background: #050505;
+    color: #888;
+    padding: 70px 48px 30px;
+    border-top: 1px solid #1f1f1f;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #f5f1e8;
+    letter-spacing: 0.15em;
+    margin-bottom: 18px;
+  }
+  .footer-logo .accent { color: #c9a961; }
+  footer p { font-size: 13px; line-height: 1.8; color: #888; margin-bottom: 22px; font-weight: 300; }
+  .social-row { display: flex; gap: 18px; font-size: 18px; color: #c9a961; }
+  .social-row i { cursor: pointer; }
+  .footer-col-title { font-size: 11px; letter-spacing: 0.2em; color: #c9a961; margin-bottom: 18px; }
+  .footer-col-list { font-size: 13px; line-height: 2.2; color: #888; font-weight: 300; }
+  .footer-bottom {
+    border-top: 1px solid #1f1f1f;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #555;
+    max-width: 1200px;
+    margin: 0 auto;
+    letter-spacing: 0.05em;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .header { padding: 16px 20px; }
+    .nav-left { display: none; }
+    .hero { padding: 60px 24px; min-height: 540px; }
+    .hero h1 { font-size: 44px; }
+    .trust-bar { grid-template-columns: repeat(2, 1fr); }
+    .trust-item:nth-child(2) { border-right: none; }
+    .trust-item:nth-child(-n+2) { border-bottom: 1px solid #1f1f1f; }
+    section { padding: 70px 24px; }
+    .section-head h2 { font-size: 32px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service { border-right: none; }
+    .service:nth-last-child(2) { border-bottom: 1px solid #1f1f1f; }
+    .founder-grid { grid-template-columns: 1fr; gap: 40px; }
+    .founder h2 { font-size: 32px; }
+    .review-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta h2 { font-size: 34px; }
+    .visit-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">★ <span class="gold">4.9</span> RATED · 665+ VERIFIED REVIEWS · BOOK ONLINE 24/7</div>
+
+<header class="header">
+  <nav class="nav-left">
+    <span>SERVICES</span>
+    <span>OUR STUDIO</span>
+    <span>GALLERY</span>
+    <span>CONTACT</span>
+  </nav>
+  <div class="logo"><img src="images/jfades-logo.png" alt="JFADES Studios" style="height: 50px; width: auto; display: block;"></div>
+  <button class="book-btn">BOOK NOW</button>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="gold-eyebrow">EST · ILFORD · LONDON</div>
+    <h1>Where the cut<br>becomes <em>craft.</em></h1>
+    <p class="lead">London's premier men's grooming studio. Master barbering, luxury treatments, and natural braiding — delivered with precision by Head Barber José and his team.</p>
+    <div class="btn-row">
+      <button class="btn btn-gold">BOOK YOUR APPOINTMENT</button>
+      <button class="btn btn-outline-light">EXPLORE SERVICES</button>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar" style="padding: 0;">
+  <div class="trust-item">
+    <i class="ti ti-scissors" aria-hidden="true"></i>
+    <div class="trust-title">Master barbers</div>
+    <div class="trust-sub">Years of precision</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-diamond" aria-hidden="true"></i>
+    <div class="trust-title">Luxury treatments</div>
+    <div class="trust-sub">CEO-grade grooming</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-calendar-check" aria-hidden="true"></i>
+    <div class="trust-title">Book online 24/7</div>
+    <div class="trust-sub">Instant confirmation</div>
+  </div>
+  <div class="trust-item">
+    <i class="ti ti-star-filled" aria-hidden="true"></i>
+    <div class="trust-title">4.9★ rated</div>
+    <div class="trust-sub">665+ reviews</div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-head">
+    <div class="gold-line"></div>
+    <h2>Our <em>services</em></h2>
+    <p>From the everyday cut to the executive grooming experience. Every service delivered with the precision JFADES is known for.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Standard Service</div>
+        <div class="service-price">£40</div>
+      </div>
+      <div class="service-meta">SENIOR BARBERS · 1H</div>
+      <div class="service-desc">Full haircut, beard, wash & shampoo. Add additional services on request.</div>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Standard Service (JFADES)</div>
+        <div class="service-price">£65</div>
+      </div>
+      <div class="service-meta">HEAD BARBER JOSÉ · 1H</div>
+      <div class="service-desc">The signature JFADES standard service, delivered personally by José.</div>
+      <span class="service-tag">SIGNATURE</span>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">VIP Service (JFADES)</div>
+        <div class="service-price">£80</div>
+      </div>
+      <div class="service-meta">HEAD BARBER JOSÉ · 1H 15M</div>
+      <div class="service-desc">The full VIP treatment. José's premium service for clients who expect the very best.</div>
+      <span class="service-tag">MOST BOOKED</span>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Senior VIP Service</div>
+        <div class="service-price">£60</div>
+      </div>
+      <div class="service-meta">SENIOR BARBERS · 1H</div>
+      <div class="service-desc">VIP-level grooming experience delivered by our senior barber team.</div>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Presidential Facial</div>
+        <div class="service-price">£100</div>
+      </div>
+      <div class="service-meta">LUXURY TREATMENT · 1H 30M</div>
+      <div class="service-desc">A premium facial treatment designed for the modern gentleman. Restorative, refined, exceptional.</div>
+      <span class="service-tag">LUXURY</span>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Luxury CEO Treatment</div>
+        <div class="service-price">£150</div>
+      </div>
+      <div class="service-meta">LUXURY TREATMENT · 2H</div>
+      <div class="service-desc">Our most exclusive package. The complete grooming experience for those who lead.</div>
+      <span class="service-tag">FLAGSHIP</span>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Kids Service (Under 15)</div>
+        <div class="service-price">£30</div>
+      </div>
+      <div class="service-meta">SENIOR BARBERS · 1H</div>
+      <div class="service-desc">Quality cuts for the next generation. Patient, professional, kid-friendly.</div>
+    </div>
+
+    <div class="service">
+      <div class="service-head">
+        <div class="service-name">Men's Natural Braiding</div>
+        <div class="service-price">From £40</div>
+      </div>
+      <div class="service-meta">2 STITCH TO FREESTYLE · 1H+</div>
+      <div class="service-desc">Stitch braids, twists, plaits, and Fulani styles. From classic 2-stitch up to freestyle work.</div>
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="founder-grid">
+    <div class="founder-img"></div>
+    <div>
+      <div class="gold-eyebrow">MEET THE FOUNDER</div>
+      <h2>"Every cut is personal. Every <em>detail</em> matters."</h2>
+      <p>JFADES was built on a single principle — that men's grooming deserves to be treated as a craft, not a commodity. We don't rush. We don't compromise. We deliver the cut you came in for, every single time.</p>
+      <p>From the everyday standard service to the Luxury CEO Treatment, every appointment at JFADES is built around precision, professionalism, and the kind of attention to detail you'll only find here.</p>
+      <div class="founder-sig">— José, Head Barber & Founder</div>
+      <button class="btn btn-gold">BOOK WITH JOSÉ</button>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="section-head">
+    <div class="gold-line"></div>
+    <h2>What our <em>clients</em> say</h2>
+    <p>Real reviews from real clients. The JFADES standard isn't a marketing claim — it's earned, one cut at a time.</p>
+  </div>
+
+  <div class="reviews-stats">
+    <div class="stars-row">★★★★★</div>
+    <div class="stats-text"><strong>4.9 / 5</strong> · across <strong>665</strong> verified reviews on Booksy</div>
+  </div>
+
+  <div class="review-grid">
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>"Hands down one of the best barbers I've been to. Super professional, takes the time to listen to what you want and delivers to the spec every time. The attention to detail is next level."</blockquote>
+      <div class="review-name">Verified Client</div>
+      <div class="review-meta">Standard Service (JFADES) · Booked via Booksy</div>
+    </div>
+
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>"Best haircut and experience I've ever received in a barbers. Highly recommend. The shop has a very welcoming feel to it. I'll definitely be going back."</blockquote>
+      <div class="review-name">Verified Client</div>
+      <div class="review-meta">VIP Service (JFADES) · Booked via Booksy</div>
+    </div>
+
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>"Came to JFADES all the way from Harrow because I needed a great cut for my new job. Clean lines, smooth fade, no rushing. I left feeling confident and fresh. Truly knows their craft."</blockquote>
+      <div class="review-name">Verified Client</div>
+      <div class="review-meta">Standard Service (JFADES) · Booked via Booksy</div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="section-head">
+    <div class="gold-line"></div>
+    <h2>The <em>work</em></h2>
+    <p>Every cut tells a story. Browse a selection of recent work from José and the JFADES team.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/eaa47737de094719bd5b2fe37cbc5921.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/add15fc207d34484aa2f11a6bb443f5c.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/4402501ac692482e944f7760d50c966a.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/2ededb809513402bbc81fbf0d9dd1c67.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/biz_photo/d23bad518a6d44e89a2cc098ec4098-jfades-studios-biz-photo-dadd11ec63eb440ca9bc7ce07be327-booksy.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/eaa47737de094719bd5b2fe37cbc5921.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/add15fc207d34484aa2f11a6bb443f5c.jpeg');"></div>
+    <div style="background-image: url('https://d375139ucebi94.cloudfront.net/region2/gb/32659/service_photos/4402501ac692482e944f7760d50c966a.jpeg');"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="gold-line"></div>
+  <h2>Ready for the<br><em>JFADES experience?</em></h2>
+  <p>Book online in seconds. Real-time availability with José and the senior team. No phone calls, no waiting.</p>
+  <div class="btn-row">
+    <button class="btn btn-gold">BOOK NOW</button>
+    <button class="btn btn-outline-light">VIEW SERVICES</button>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="section-head">
+    <div class="gold-line"></div>
+    <h2>Visit the <em>studio</em></h2>
+  </div>
+
+  <div class="visit-grid">
+    <div class="visit-card">
+      <i class="ti ti-map-pin" aria-hidden="true"></i>
+      <h3>Location</h3>
+      <p>42A Woodford Avenue<br>Ilford, IG2 6XQ<br>London, United Kingdom</p>
+    </div>
+    <div class="visit-card">
+      <i class="ti ti-clock" aria-hidden="true"></i>
+      <h3>Opening Hours</h3>
+      <p>By appointment<br>Book online for real-time availability<br>Walk-ins subject to schedule</p>
+    </div>
+    <div class="visit-card">
+      <i class="ti ti-parking" aria-hidden="true"></i>
+      <h3>Amenities</h3>
+      <p>Parking available<br>Free Wi-Fi<br>Premium studio environment</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-wrap" style="margin-bottom: 20px;"><img src="images/jfades-logo.png" alt="JFADES Studios" style="height: 60px; width: auto; display: block; filter: brightness(0) invert(1) sepia(0.3) saturate(1.5) hue-rotate(15deg);"></div>
+      <p>London's premier men's grooming studio.<br>42A Woodford Avenue, Ilford IG2 6XQ.</p>
+      <div class="social-row">
+        <i class="ti ti-brand-instagram" aria-label="Instagram"></i>
+        <i class="ti ti-brand-tiktok" aria-label="TikTok"></i>
+        <i class="ti ti-brand-youtube" aria-label="YouTube"></i>
+        <i class="ti ti-brand-whatsapp" aria-label="WhatsApp"></i>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">SERVICES</div>
+      <div class="footer-col-list">Standard Cuts<br>VIP Service<br>Luxury Treatments<br>Natural Braiding<br>Kids Cuts</div>
+    </div>
+    <div>
+      <div class="footer-col-title">STUDIO</div>
+      <div class="footer-col-list">About Us<br>Our Team<br>Gallery<br>Reviews</div>
+    </div>
+    <div>
+      <div class="footer-col-title">BOOKING</div>
+      <div class="footer-col-list">Book Online<br>Cancellation Policy<br>Gift Vouchers<br>Contact</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 JFADES STUDIOS · ALL RIGHTS RESERVED</div>
+    <div>PRIVACY · TERMS · COOKIES</div>
+  </div>
+</footer>
+
+</body>
+</html>
